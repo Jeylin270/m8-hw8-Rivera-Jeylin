@@ -40,11 +40,30 @@ header a {
   font-size: 1.5rem;
   color: var(--off-white);
 }
+
+header a {
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+header a:hover {
+  color: var(--secondary-color);
+}
 /* end header link animations */
 
 /* article link transitions */
 main a {
   color: var(--danger-color);
+}
+
+main a {
+  text-decoration: none;
+  transition: color 0.3s ease, border-bottom 0.3s ease;
+}
+
+main a:hover {
+  color: var(--secondary-color);
+  border-bottom: 2px solid var(--secondary-color);
 }
 /* end article link transitions */
 
@@ -100,6 +119,21 @@ section.hero > button {
   border-radius: 12px;
   text-transform: uppercase;
   cursor: pointer;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+section.hero > button {
+  transition: background-color 0.3s ease;
+}
+
+section.hero > button:hover {
+  background-color: var(--warn-color);
+  animation: pulse 1s infinite;
 }
 
 main article {
